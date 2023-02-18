@@ -1,0 +1,33 @@
+program porq
+    implicit none
+print*, `a`
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+print*, `a`
+
+
+end program porq

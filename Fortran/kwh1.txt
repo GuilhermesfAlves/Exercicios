@@ -1,0 +1,8 @@
+name1  130
+name2  3562
+name3  50
+name4  29
+name5  70
+name6  300
+name7  200
+name8  100

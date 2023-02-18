@@ -1,0 +1,14 @@
+pessoa1  57
+pessoa2  105
+pessoa3  251
+pessoa4  360
+pessoa5  264
+pessoa6  159
+pessoa7  124
+pessoa8  78
+pessoa9  97
+pessoa10  186
+pessoa11  237
+pessoa12  291
+pessoa13  370
+exit  1

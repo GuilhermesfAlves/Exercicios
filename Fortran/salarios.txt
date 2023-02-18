@@ -1,0 +1,80 @@
+Nome: Camilly             
+Salario BRUTO:   1250.00
+Salario LIQUIDO:   1062.50
+
+Nome: Eduarda             
+Salario BRUTO:    120.00
+Salario LIQUIDO:    102.00
+
+Nome: Maria               
+Salario BRUTO:   2750.00
+Salario LIQUIDO:   2062.50
+
+Nome: Vinicius            
+Salario BRUTO:   1710.00
+Salario LIQUIDO:   1453.50
+
+Nome: Guilherme           
+Salario BRUTO:   1290.00
+Salario LIQUIDO:   1096.50
+
+Nome: Tatiane             
+Salario BRUTO:   3000.00
+Salario LIQUIDO:   2250.00
+
+Nome: Caio                
+Salario BRUTO:   4500.00
+Salario LIQUIDO:   3375.00
+
+Nome: Joana               
+Salario BRUTO:     90.00
+Salario LIQUIDO:     76.50
+
+Nome: Leonardo            
+Salario BRUTO:   2250.00
+Salario LIQUIDO:   1687.50
+
+Nome: Lucas               
+Salario BRUTO:   4750.00
+Salario LIQUIDO:   3562.50
+
+Nome: Kauanne             
+Salario BRUTO:    360.00
+Salario LIQUIDO:    306.00
+
+Nome: Catherine           
+Salario BRUTO:   2270.00
+Salario LIQUIDO:   1702.50
+
+Nome: Carlos              
+Salario BRUTO:   1460.00
+Salario LIQUIDO:   1241.00
+
+Nome: Mauricio            
+Salario BRUTO:    750.00
+Salario LIQUIDO:    637.50
+
+Nome: Yasmyn              
+Salario BRUTO:   2250.00
+Salario LIQUIDO:   1687.50
+
+Nome: Luis                
+Salario BRUTO:   1400.00
+Salario LIQUIDO:   1190.00
+
+Nome: Cesar               
+Salario BRUTO:   1800.00
+Salario LIQUIDO:   1530.00
+
+Nome: Paulo               
+Salario BRUTO:   1820.00
+Salario LIQUIDO:   1547.00
+
+Nome: Pedro               
+Salario BRUTO:   1000.00
+Salario LIQUIDO:    850.00
+
+Nome: Bruna               
+Salario BRUTO:   1530.00
+Salario LIQUIDO:   1300.50
+

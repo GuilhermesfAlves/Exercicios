@@ -1,0 +1,13 @@
+Morador101 400
+Morador102 200
+Morador103 354
+Morador201 326
+Morador202 268
+Morador203 157
+Morador301 29
+Morador302 50
+Morador303 74
+Morador401 102
+Morador402 197
+Morador403 209
+exit 11

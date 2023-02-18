@@ -1,0 +1,110 @@
+ /x/            /y/
+ 1  ;           5.00
+ 2  ;           7.00
+ 3  ;          11.00
+ 4  ;          19.00
+ 5  ;          35.00
+ 6  ;          67.00
+ 7  ;         131.00
+ 8  ;         259.00
+ 9  ;         515.00
+10  ;        1027.00
+11  ;        2051.00
+12  ;        4099.00
+13  ;        8195.00
+14  ;       16387.00
+15  ;       32771.00
+16  ;       65539.00
+17  ;      131075.00
+18  ;      262147.00
+19  ;      524291.00
+20  ;     1048579.00
+21  ;     2097155.00
+
+
+Dividindo em  1 trapezios
+A area de cada trapezio e:
+20971600.00
+
+
+A area total da soma dos trapezios e:  20971600.00
+A integral e: 3025610.00
+A diferenca e:17945990.00
+
+
+
+Dividindo em  2 trapezios
+A area de cada trapezio e:
+   10280.00
+10496030.00
+
+
+A area total da soma dos trapezios e:  10506310.00
+A integral e: 3025610.00
+A diferenca e: 7480700.00
+
+
+
+Dividindo em  5 trapezios
+A area de cada trapezio e:
+      80.00
+    1100.00
+   17420.00
+  278540.00
+ 4456460.00
+
+
+A area total da soma dos trapezios e:   4753600.00
+A integral e: 3025610.00
+A diferenca e: 1727990.00
+
+
+
+Dividindo em 10 trapezios
+A area de cada trapezio e:
+      16.00
+      46.00
+     166.00
+     646.00
+    2566.00
+   10246.00
+   40966.00
+  163846.00
+  655366.00
+ 2621446.00
+
+
+A area total da soma dos trapezios e:   3495310.00
+A integral e: 3025610.00
+A diferenca e:  469700.00
+
+
+
+Dividindo em 20 trapezios
+A area de cada trapezio e:
+       6.00
+       9.00
+      15.00
+      27.00
+      51.00
+      99.00
+     195.00
+     387.00
+     771.00
+    1539.00
+    3075.00
+    6147.00
+   12291.00
+   24579.00
+   49155.00
+   98307.00
+  196611.00
+  393219.00
+  786435.00
+ 1572867.00
+
+
+A area total da soma dos trapezios e:   3145785.00
+A integral e: 3025610.00
+A diferenca e:  120175.00
+
