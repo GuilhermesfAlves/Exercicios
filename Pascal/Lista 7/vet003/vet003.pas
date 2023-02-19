@@ -1,47 +1,46 @@
 program vet003;
-type vec = array[1..200] of LongInt;
-var n,i:LongInt;
+type vetor = array[1..200] of Integer;
+var n,i:Integer;
     verif:Boolean;
-    vetor:vec;
+    vet:vetor;
 
-procedure lervetor (var vetor:vec;n:Integer);
-var i:Integer;
+procedure lervet(var vet:vetor;n:Integer);
+var i,r:Integer;
 begin
-    for i:=0 to n-1 do 
-        read(vetor[n-i]);
+    for i:=0 to n-1 do
+    begin
+        read(r);   
+        vet[n-i]:=r+200;     
+    end; 
 end;
 
-procedure escrevevetor (var vetor:vec;n:Integer);
+procedure escrevevet(vet:vetor;n:Integer);
 var i:Integer;
 begin
     for i:=1 to n do 
-        Write(vetor[i],' ');
+        Write(vet[i]-200,' ');
+    WriteLn('');
 end;
 
 begin
     read(n);
     verif:=false;
-    lervetor(vetor,n);
+    lervet(vet,n);
     i:=1;
     while (i<=n) and (not(verif))do
     begin
-        if (vetor[i+1]>0) then
-            if (vetor[i+1])<(vetor[i]) then
-                verif:=False;
-        if (vetor[i+1]<0) and (vetor[i]<0) then
-            if (vetor[i+1])<(vetor[i]) then
-                verif:=False;
+        if (vet[i+1]>vet[i]) then
+            verif:=true;
         i:=i+1;
     end;
     if (n>0) then
     begin
         if verif then
             WriteLn('nao')
-        else 
+        else
             WriteLn('sim');
-        i:=1;
-        escrevevetor(vetor,n);
+        escrevevet(vet,n);          
     end
     else   
-     WriteLn('vetor vazio');
+        WriteLn('vetor vazio');
 end.

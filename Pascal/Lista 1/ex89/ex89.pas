@@ -1,4 +1,4 @@
-program e89;
+program ex89;
 var fabr:Integer;
     imp, distr:SmallInt;
 begin

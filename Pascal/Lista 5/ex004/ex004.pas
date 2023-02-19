@@ -19,7 +19,7 @@ begin
         a:=a+1;
         b:=b+3;
       end;
-    s:=s+a/b;
+    s:=s+a/b;  
   end;
   WriteLn(s:0:2);
 end.
