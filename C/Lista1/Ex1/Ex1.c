@@ -1,13 +1,12 @@
 #include <stdio.h>
 #define tam 1024
-
-int main (){
-    int V[tam];
+int main(){
     int n;
+    int V[tam];
     scanf("%d",&n);
-    for (i = 0; i<n; i++){
+    for (int i = 0; i<n; i++){
         V[i] = i;
-        printf("V[%d] = %d", i, V[i]);
+        printf("V[%d] = %d\n", i, V[i]);
     }
     return 0;
 }
