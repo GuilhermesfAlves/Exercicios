@@ -6,23 +6,24 @@ struct Rac{
 
 struct Rac le_num(){
     struct Rac R;
-    scanf("%d %d", &R.num, &R.den);         /* leitura de racional A = a / b*/
+    scanf("%d %d", &R.num, &R.den);                   /* leitura de racional A = a / b*/
     return R;
 }
 
-int MMC(int a, int b){                                /* MMC de dois numeros(denominadores de A e B) */
-    int resto, num1;
-    num1 = a;
+int MMC(int num1, int num2){                                /* MMC de dois numeros(denominadores de A e B) */
+    int resto, a, b;
+    a = num1;
+    b = num2;
     do {
         resto = a % b;
         a = b;
         b = resto;
     } while (resto != 0);
-    return (a * b)/ num1;
+    return (num1 * num2)/ a;
 }
 
 int MDC(struct Rac A){                                /* MDC entre numerador e denominador de A*/
-    int resto;
+    int resto = 0;
     do {
         resto = A.num % A.den;
         A.num = A.den;
@@ -76,10 +77,14 @@ struct Rac Simplifica(struct Rac A){                  /* Simplificação de um R
         A.num = A.num/MDCbase;
         A.den = A.den/MDCbase;
     };
+    if (A.den < 0){
+        A.num = -A.num;
+        A.den = -A.den;
+    }
     return A;
 }
 
-void imprim(struct Rac A){
+void imprim(struct Rac A){                            /* Impressão e simplificação de resultado */
     if (A.num == 0){
         printf("0\n");
     }
@@ -92,12 +97,21 @@ void imprim(struct Rac A){
 }
 
 int main(){
-    struct Rac A, B;              /* RACIONAIS A e B */
-    A = le_num();
-    B = le_num();
-    imprim(Simplifica(SOMA(A, B)));
-    imprim(Simplifica(SUB(A, B)));
-    imprim(Simplifica(MULT(A, B)));
-    imprim(Simplifica(DIV(A, B)));
+    struct Rac A, B;                                  /* RACIONAIS A e B */ 
+    while (1){
+        A = le_num();
+        if (A.den == 0){
+            break;
+        }
+        B = le_num();
+        if (B.den == 0){
+            break;
+        }
+        imprim(Simplifica(SOMA(A, B)));
+        imprim(Simplifica(SUB(A, B)));
+        imprim(Simplifica(MULT(A, B)));
+        imprim(Simplifica(DIV(A, B)));
+    printf("\n");        
+    }
     return 0;
 }
