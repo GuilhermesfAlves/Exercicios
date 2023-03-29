@@ -4,98 +4,100 @@ struct Rac{
     int num,den;                                      /* estrutura de Racional a/b */
 };
 
-struct rac A,B;                                       /* RACIONAIS A e B */
-
 struct Rac le_num(){
-int num,den;
-    scanf("%d %d", &le_num.num, &le_num.den);         /* leitura de racional A = a / b*/
-    return le_num;
-};
-
-struct Rac SOMA(Struct Rac A, Struct Rac B){          /* SOMA de dois racionais A + B */
-int ma, mb;
-    SOMA.den = MMC(A.den,B.den);
-    ma = SOMA.den / A.den;
-    mb = SOMA.den / B.den;
-    A.num = ma*A.num;
-    B.num = mb*B.num;
-    SOMA.num = A.num + B.num;
-    return SOMA;
-};
-
-struct Rac SUB(Struct Rac A, Struct Rac B){           /* SUB de dois racionais A - B */
-int ma, mb;
-    SUB.den = MMC(A.den,B.den);
-    ma = SUB.den / A.den;
-    mb = SUB.den / B.den;
-    A.num = ma*A.num;
-    B.num = mb*B.num;
-    SUB.num = A.num - B.num;
-    return SUB;
-};
-
-struct Rac MULT(Struct Rac A, Struct Rac B){          /* MULT de dois racionais A * B */
-    MULT.num = A.num * B.num;
-    MULT.den = A.den * B.den;
-    return MULT;
-};
-
-struct Rac DIV(Struct Rac A, Struct Rac B){           /* DIV de dois racionais A div B */
-    DIV.num = A.num * B.den;
-    DIV.den = A.den * B.num;
-    return DIV;
-};
-
-struct Rac Simplifica(struct Rac A){               /* Simplificação de um Racional A */
-int MDCbase;
-    MDCbase = MDC(A);
-    if (MDCbase != 1){
-        A.num = A.num/MDCbase;
-        A.den = A.den/MDCbase;
-    };
-    return A;
-};
+    struct Rac R;
+    scanf("%d %d", &R.num, &R.den);         /* leitura de racional A = a / b*/
+    return R;
+}
 
 int MMC(int a, int b){                                /* MMC de dois numeros(denominadores de A e B) */
-int resto, num1, num2;
+    int resto, num1;
     num1 = a;
-    num2 = b;
     do {
         resto = a % b;
         a = b;
         b = resto;
     } while (resto != 0);
     return (a * b)/ num1;
-};
+}
 
 int MDC(struct Rac A){                                /* MDC entre numerador e denominador de A*/
-int resto;
+    int resto;
     do {
-        resto = a % b;
-        a = b;
-        b = resto;
+        resto = A.num % A.den;
+        A.num = A.den;
+        A.den = resto;
     } while (resto != 0);
-    return a;
-};
+    return A.num;
+}
 
-void imprim(Rac A){
-    if(A.num = 0){
-        printf("0")
+struct Rac SOMA(struct Rac A, struct Rac B){          /* SOMA de dois racionais A + B */
+    int ma, mb;
+    struct Rac R;
+    R.den = MMC(A.den, B.den);
+    ma = R.den / A.den;
+    mb = R.den / B.den;
+    A.num = ma*A.num;
+    B.num = mb*B.num;
+    R.num = A.num + B.num;
+    return R;
+}
+
+struct Rac SUB(struct Rac A, struct Rac B){           /* SUB de dois racionais A - B */
+    struct Rac R;
+    int ma, mb;
+    R.den = MMC(A.den,B.den);
+    ma = R.den / A.den;
+    mb = R.den / B.den;
+    A.num = ma*A.num;
+    B.num = mb*B.num;
+    R.num = A.num - B.num;
+    return R;
+}
+
+struct Rac MULT(struct Rac A, struct Rac B){          /* MULT de dois racionais A * B */
+    struct Rac R;
+    R.num = A.num * B.num;
+    R.den = A.den * B.den;
+    return R;
+}
+
+struct Rac DIV(struct Rac A, struct Rac B){           /* DIV de dois racionais A div B */
+    struct Rac R;
+    R.num = A.num * B.den;
+    R.den = A.den * B.num;
+    return R;
+}
+
+struct Rac Simplifica(struct Rac A){                  /* Simplificação de um Racional A */
+    int MDCbase;
+    MDCbase = MDC(A);
+    if (MDCbase != 1){
+        A.num = A.num/MDCbase;
+        A.den = A.den/MDCbase;
     };
-    else if(A.den = 1){
-        printf("%d", A.num);
-    };
-    else{
-        printf("%d/%d", A.num, A.den);
+    return A;
+}
+
+void imprim(struct Rac A){
+    if (A.num == 0){
+        printf("0\n");
     }
+    else if (A.den == 1){
+        printf("%d\n", A.num);
+    }
+    else{
+        printf("%d/%d\n", A.num, A.den);
+    };
 }
 
 int main(){
+    struct Rac A, B;              /* RACIONAIS A e B */
     A = le_num();
     B = le_num();
-    imprim(SOMA(A,B));
-    imprim(SUB(A,B));
-    imprim(MULT(A,B));
-    imprim(DIV(A,B));
+    imprim(Simplifica(SOMA(A, B)));
+    imprim(Simplifica(SUB(A, B)));
+    imprim(Simplifica(MULT(A, B)));
+    imprim(Simplifica(DIV(A, B)));
     return 0;
 }
