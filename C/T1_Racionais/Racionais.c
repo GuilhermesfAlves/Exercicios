@@ -1,16 +1,16 @@
 #include <stdio.h>
 
-struct Rac{
+struct rac{
     int num,den;                                      /* estrutura de Racional a/b */
 };
 
-struct Rac le_num(){
-    struct Rac R;
-    scanf("%d %d", &R.num, &R.den);                   /* leitura de racional A = a / b*/
-    return R;
+struct rac le_num(){
+    struct rac result;
+    scanf("%d %d", &result.num, &result.den);                   /* leitura de racional a = a / b*/
+    return result;
 }
 
-int MMC(int num1, int num2){                                /* MMC de dois numeros(denominadores de A e B) */
+int MMC(int num1, int num2){                                /* MMC de dois numeros(denominadores de a e b) */
     int resto, a, b;
     a = num1;
     b = num2;
@@ -22,96 +22,98 @@ int MMC(int num1, int num2){                                /* MMC de dois numer
     return (num1 * num2)/ a;
 }
 
-int MDC(struct Rac A){                                /* MDC entre numerador e denominador de A*/
+int MDC(struct rac a){                                /* MDC entre numerador e denominador de a*/
     int resto = 0;
     do {
-        resto = A.num % A.den;
-        A.num = A.den;
-        A.den = resto;
+        resto = a.num % a.den;
+        a.num = a.den;
+        a.den = resto;
     } while (resto != 0);
-    return A.num;
+    return a.num;
 }
 
-struct Rac SOMA(struct Rac A, struct Rac B){          /* SOMA de dois racionais A + B */
+struct rac SOMA(struct rac a, struct rac b){          /* SOMA de dois racionais a + b */
     int ma, mb;
-    struct Rac R;
-    R.den = MMC(A.den, B.den);
-    ma = R.den / A.den;
-    mb = R.den / B.den;
-    A.num = ma*A.num;
-    B.num = mb*B.num;
-    R.num = A.num + B.num;
-    return R;
+    struct rac result;
+    result.den = MMC(a.den, b.den);
+    ma = result.den / a.den;
+    mb = result.den / b.den;
+    a.num = ma*a.num;
+    b.num = mb*b.num;
+    result.num = a.num + b.num;
+    return result;
 }
 
-struct Rac SUB(struct Rac A, struct Rac B){           /* SUB de dois racionais A - B */
-    struct Rac R;
+struct rac SUB(struct rac a, struct rac b){           /* SUB de dois racionais a - b */
+    struct rac result;
     int ma, mb;
-    R.den = MMC(A.den,B.den);
-    ma = R.den / A.den;
-    mb = R.den / B.den;
-    A.num = ma*A.num;
-    B.num = mb*B.num;
-    R.num = A.num - B.num;
-    return R;
+    result.den = MMC(a.den,b.den);
+    ma = result.den / a.den;
+    mb = result.den / b.den;
+    a.num = ma*a.num;
+    b.num = mb*b.num;
+    result.num = a.num - b.num;
+    return result;
 }
 
-struct Rac MULT(struct Rac A, struct Rac B){          /* MULT de dois racionais A * B */
-    struct Rac R;
-    R.num = A.num * B.num;
-    R.den = A.den * B.den;
-    return R;
+struct rac MULT(struct rac a, struct rac b){          /* MULT de dois racionais a * b */
+    struct rac result;
+    result.num = a.num * b.num;
+    result.den = a.den * b.den;
+    return result;
 }
 
-struct Rac DIV(struct Rac A, struct Rac B){           /* DIV de dois racionais A div B */
-    struct Rac R;
-    R.num = A.num * B.den;
-    R.den = A.den * B.num;
-    return R;
+struct rac DIV(struct rac a, struct rac b){           /* DIV de dois racionais a div b */
+    struct rac result;
+    result.num = a.num * b.den;
+    result.den = a.den * b.num;
+    return result;
 }
 
-struct Rac Simplifica(struct Rac A){                  /* Simplificação de um Racional A */
+struct rac Simplifica(struct rac a){                  /* Simplificação de um Racional a */
     int MDCbase;
-    MDCbase = MDC(A);
+    MDCbase = MDC(a);
     if (MDCbase != 1){
-        A.num = A.num/MDCbase;
-        A.den = A.den/MDCbase;
+        a.num = a.num/MDCbase;
+        a.den = a.den/MDCbase;
     };
-    if (A.den < 0){
-        A.num = -A.num;
-        A.den = -A.den;
+    if (a.den < 0){
+        a.num = -a.num;
+        a.den = -a.den;
     }
-    return A;
+    return a;
 }
 
-void imprim(struct Rac A){                            /* Impressão e simplificação de resultado */
-    if (A.num == 0){
+void imprim(struct rac a){                            /* Impressão e simplificação de resultado */
+    if (a.num == 0){
         printf("0\n");
     }
-    else if (A.den == 1){
-        printf("%d\n", A.num);
+    else if (a.den == 1){
+        printf("%d\n", a.num);
     }
     else{
-        printf("%d/%d\n", A.num, A.den);
+        printf("%d/%d\n", a.num, a.den);
     };
 }
 
 int main(){
-    struct Rac A, B;                                  /* RACIONAIS A e B */ 
-    while (1){
-        A = le_num();
-        if (A.den == 0){
-            break;
-        }
-        B = le_num();
-        if (B.den == 0){
-            break;
-        }
-        imprim(Simplifica(SOMA(A, B)));
-        imprim(Simplifica(SUB(A, B)));
-        imprim(Simplifica(MULT(A, B)));
-        imprim(Simplifica(DIV(A, B)));
-    printf("\n");        
+    struct rac a, b;                                  /* RACIONAIS a e b */ 
+    a = le_num();
+    if (a.den != 0)
+          b = le_num();
+    else
+        return 1;
+    while (b.den != 0){
+        imprim(Simplifica(SOMA(a, b)));
+        imprim(Simplifica(SUB(a, b)));
+        imprim(Simplifica(MULT(a, b)));
+        imprim(Simplifica(DIV(a, b)));
+        printf("\n");
+        a = le_num();
+        if (a.den != 0)
+            b = le_num();
+        else
+            return 1;
     }
     return 0;
 }
