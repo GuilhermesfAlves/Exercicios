@@ -17,6 +17,9 @@ int main(){
         }
     printf("%d\n", v[n-1]);
     }
-    else
+    else{
         printf("erro, estoura o vetor\n");
+        return 1;
+    }
+    return 0;
 }

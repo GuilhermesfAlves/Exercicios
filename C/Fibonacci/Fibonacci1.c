@@ -17,4 +17,5 @@ int main(){
             a3 = a1 + a2;
         }
     printf("%d\n", a3);
+    return 0;
 }
